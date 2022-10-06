@@ -26,40 +26,91 @@ namespace Kazino
 
         User users = new User();
         public static ObservableCollection<User> user { get; set; }
+
+        
         public KazinoPage(User userz)
         {
             InitializeComponent();
 
             users = userz;
+
+            username.Content = users.UserName;
+            count.Content = users.Count;
             this.DataContext = this;
         }
 
         private void btnStart_click(object sender, RoutedEventArgs e)
         {
+            
+            var a = 0;
+            var b = 0;
+            var c = 0;
+
             for (int i = 0; i <= 2; i++)
             {
                 int value = random.Next(1, 4);
-
-                if (value == 1)
+                if (i == 0)
                 {
-                    first.Source = new BitmapImage( new Uri("C:/Users/201909/source/repos/Kazino/Kazino/Resources/1.jpg"));
+                    if (value == 1)
+                    {
+                        first.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/1.jpg"));
+                        a++;
+                    }
+                    else if (value == 2)
+                    {
+                        first.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/2.jpg"));
+                        b++;
+                    }
+                    else if (value == 3)
+                    {
+                        first.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/3.jpg"));
+                        c++;
+                    }
                 }
-                else if (value == 2)
+                else if (i == 1)
                 {
-                    second.Source = new BitmapImage(new Uri("C:/Users/201909/source/repos/Kazino/Kazino/Resources/2.jpg"));
+                    if (value == 1)
+                    {
+                        second.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/1.jpg"));
+                        a++;
+                    }
+                    else if (value == 2)
+                    {
+                        second.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/2.jpg"));
+                        b++;
+                    }
+                    else if (value == 3)
+                    {
+                        second.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/3.jpg"));
+                        c++;
+                    }
                 }
-                else if (value == 3)
+                else if (i == 2)
                 {
-                    third.Source = new BitmapImage(new Uri("C:/Users/201909/source/repos/Kazino/Kazino/Resources/3.jpg"));
+                    if (value == 1)
+                    {
+                        third.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/1.jpg"));
+                        a++;
+                    }
+                    else if (value == 2)
+                    {
+                        third.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/2.jpg"));
+                        b++;
+                    }
+                    else if (value == 3)
+                    {
+                        third.Source = new BitmapImage(new Uri("C:/Users/chudo/source/repos/Kazino/Kazino/Resources/3.jpg"));
+                        c++;
+                    }
                 }
             }
 
-            if (first == second && second == third)
+            if (a == 3 || b == 3 || c == 3)
             {
                 users.Count += 1000;
                 MessageBox.Show("+1000");
             }
-            else if (first == second || second == third || first == third)
+            else if (a == 2 || b == 2 || c == 2)
             {
                 users.Count += 100;
                 MessageBox.Show("+100");
@@ -71,9 +122,7 @@ namespace Kazino
             }
 
             db_connection.kazino.SaveChanges();
-            first = null;
-            second = null; 
-            third = null;   
+            count.Content = users.Count;
         }
     }
 }

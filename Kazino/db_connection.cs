@@ -8,6 +8,6 @@ namespace Kazino
 {
     public class db_connection
     {
-        public static KazinoEntities kazino = new KazinoEntities();
+        public static KazinoEntities1 kazino = new KazinoEntities1();
     }
 }

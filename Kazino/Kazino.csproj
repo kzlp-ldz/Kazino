@@ -65,10 +65,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="db_connection.cs" />
-    <Compile Include="Kazinoooo.cs">
+    <Compile Include="Kazinooo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Kazinoooo.tt</DependentUpon>
+      <DependentUpon>Kazinooo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kazinooo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kazinooo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kazinooo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Kazinooo.edmx</DependentUpon>
     </Compile>
     <Compile Include="KazinoPage.xaml.cs">
       <DependentUpon>KazinoPage.xaml</DependentUpon>
@@ -77,7 +87,7 @@
       <DependentUpon>RegistPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Kazinoooo.tt</DependentUpon>
+      <DependentUpon>Kazinooo.tt</DependentUpon>
     </Compile>
     <Page Include="AuthoPage.xaml">
       <SubType>Designer</SubType>
@@ -97,16 +107,6 @@
     </Compile>
     <Compile Include="AuthoPage.xaml.cs">
       <DependentUpon>AuthoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Kazinoooo.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Kazinoooo.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Kazinoooo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Kazinoooo.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -135,12 +135,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Kazinoooo.edmx">
+    <EntityDeploy Include="Kazinooo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Kazinoooo.Designer.cs</LastGenOutput>
+      <LastGenOutput>Kazinooo.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Kazinoooo.edmx.diagram">
-      <DependentUpon>Kazinoooo.edmx</DependentUpon>
+    <None Include="Kazinooo.edmx.diagram">
+      <DependentUpon>Kazinooo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -152,16 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Kazinoooo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Kazinoooo.Context.cs</LastGenOutput>
-      <DependentUpon>Kazinoooo.edmx</DependentUpon>
-    </Content>
-    <Content Include="Kazinoooo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Kazinoooo.edmx</DependentUpon>
-      <LastGenOutput>Kazinoooo.cs</LastGenOutput>
-    </Content>
     <Resource Include="Resources\3.jpg" />
     <Resource Include="Resources\2.jpg" />
     <Resource Include="Resources\1.jpg" />
@@ -169,6 +159,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Kazinooo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Kazinooo.edmx</DependentUpon>
+      <LastGenOutput>Kazinooo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Kazinooo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Kazinooo.edmx</DependentUpon>
+      <LastGenOutput>Kazinooo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,6 +21,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Label x:Name="username" FontSize="36" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="#706262"/>
+        <Label x:Name="count" FontSize="36" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="#706262"/>
         <Image x:Name="first" Grid.Row="1" Grid.Column="1" Margin="10" />
         <Image x:Name="second" Grid.Row="1" Grid.Column="2" Margin="10"/>
         <Image x:Name="third" Grid.Row="1" Grid.Column="3" Margin="10"/>
